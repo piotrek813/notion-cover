@@ -31,8 +31,12 @@ const changeCover = async () => {
             })
         }
 
+        return 'cover set successfully'
+
     } catch (error) {
         console.error(error);
+
+        return 'there was an unexpected error (very helpfull, i know)'
     }
   };
 
