@@ -3,8 +3,9 @@ require('dotenv').config();
 
 const notion = new Client({ auth: process.env.NOTION_API_KEY });
 
-const changeCover = async () => {
+const changeCover = async (url) => {
     try {
+      console.log(url);
         const databaseId = process.env.NOTION_DATABASE_ID;
         const {results} = await notion.databases.query({
           database_id: databaseId,
@@ -25,7 +26,7 @@ const changeCover = async () => {
                 cover: {
                     type: 'external',
                     external: {
-                        url: 'https://images.unsplash.com/photo-1661329740220-446be722e3fe?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80',
+                        url,
                     }
                 }
             })
