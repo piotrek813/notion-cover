@@ -12,7 +12,7 @@ const changeCover = async () => {
           sorts: [
             {
               property: 'Created time',
-              direction: 'ascending',
+              direction: 'descending',
             },
           ],
         });
